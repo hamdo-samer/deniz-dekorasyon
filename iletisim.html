@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Deniz Dekorasyon İletişim - Bize ulaşın, projenizi konuşalım.">
+    <title>İletişim | Deniz Dekorasyon</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preload" as="image" href="img/hero-bg.jpg">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo" aria-label="Deniz Dekorasyon Ana Sayfa">
+                <img src="img/logo.jpg" alt="Deniz Dekorasyon Logo" class="logo-img">
+                <span class="logo-text">Deniz <span>Dekorasyon</span></span>
+            </a>
+            <nav aria-label="Ana menü">
+                <ul class="nav-list">
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="hizmetler.html">Hizmetlerimiz</a></li>
+                    <li><a href="iletisim.html" class="active">İletişim</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero page-header">
+            <div class="container">
+                <h1>Bize Ulaşın</h1>
+                <p>Hayalinizdeki projeyi birlikte tasarlayalım.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container contact-layout">
+
+                <!-- İletişim bilgileri -->
+                <div class="contact-info">
+                    <h2>İletişim Bilgileri</h2>
+                    <address>
+                        <p><strong>Adres:</strong><br>Moğultay Mah. Günel Sokak Çağlar İş Hanı<br>Tunceli Merkez /
+                            Tunceli</p>
+                        <p><strong>E-posta:</strong><br><a
+                                href="mailto:info@denizdekorasyon.com">info@denizdekorasyon.com</a></p>
+                        <p><strong>Telefon:</strong><br><a href="tel:+90 539 309 73 94">+90 539 309 73 94</a></p>
+                    </address>
+
+                    <h3>Çalışma Saatleri</h3>
+                    <p>Pazartesi - Cumartesi: 08:30 - 19:00<br>Pazar: Kapalı</p>
+                </div>
+
+                <!-- HTML5 doğrulamalı iletişim formu -->
+                <div class="contact-form-container">
+                    <h2>Mesaj Gönderin</h2>
+                    <form action="#" method="POST" class="contact-form">
+
+                        <fieldset>
+                            <legend>Kişisel Bilgiler</legend>
+
+                            <div class="form-group">
+                                <label for="name">Adınız Soyadınız <span class="required">*</span></label>
+                                <input type="text" id="name" name="name" required minlength="3" maxlength="50"
+                                    placeholder="Örn: Ahmet Yılmaz">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">E-posta Adresiniz <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" required placeholder="ornek@email.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Telefon Numaranız</label>
+                                <!-- Telefon numarası doğrulama deseni: yalnızca rakam, 10 veya 11 hane. -->
+                                <input type="tel" id="phone" name="phone" pattern="[0-9]{10,11}"
+                                    placeholder="05555555555"
+                                    title="Lütfen 10 veya 11 haneli telefon numaranızı giriniz.">
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Mesajınız</legend>
+
+                            <div class="form-group">
+                                <label for="subject">Konu <span class="required">*</span></label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Lütfen bir konu seçin...</option>
+                                    <option value="mutfak">Mutfak Tasarımı</option>
+                                    <option value="gardirop">Gardırop / Dolap</option>
+                                    <option value="tv">TV Ünitesi / Panel</option>
+                                    <option value="banyo">Banyo Dönüşümü</option>
+                                    <option value="diger">Diğer</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Mesajınız <span class="required">*</span></label>
+                                <textarea id="message" name="message" rows="5" required minlength="10"
+                                    placeholder="Projeniz hakkında kısa bilgi verin..."></textarea>
+                            </div>
+                        </fieldset>
+
+                        <button type="submit" class="btn btn-primary btn-block">Mesajı Gönder</button>
+                        <p class="form-not"><span class="required">*</span> işaretli alanların doldurulması zorunludur.
+                        </p>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-info">
+                <h3>Deniz Dekorasyon</h3>
+                <p>Moğultay Mah. Günel Sokak Çağlar İş Hanı, Tunceli Merkez</p>
+            </div>
+            <div class="footer-contact">
+                <p>Bize ulaşın:</p>
+                <a href="mailto:info@denizdekorasyon.com">info@denizdekorasyon.com</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Deniz Dekorasyon. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,526 @@
+/* ============ 1. Temel ayarlar ============ */
+:root {
+    --renk-ana: #B87333;
+    /* Ahşap ve bakır tonları */
+    --renk-koyu: #222222;
+    /* Siyah ve koyu gri */
+    --renk-arka: #F9F9F9;
+    /* Kırık beyaz */
+    --renk-metin: #333333;
+    --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --gecis: 0.3s ease;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font);
+    color: var(--renk-metin);
+    background-color: var(--renk-arka);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: min(100% - 2rem, 1200px);
+    margin-inline: auto;
+}
+
+/* ============ 2. Üst menü ============ */
+.site-header {
+    background-color: var(--renk-koyu);
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    will-change: transform;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 1rem;
+    flex-wrap: wrap;
+    /* Küçük ekranlarda menünün taşmasını önler */
+    gap: 1rem;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--renk-ana);
+    letter-spacing: 1px;
+}
+
+.logo-text span {
+    color: #fff;
+    font-weight: 300;
+}
+
+.nav-list {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.nav-list a {
+    color: #ddd;
+    font-weight: 500;
+    transition: color var(--gecis);
+}
+
+.nav-list a:hover,
+.nav-list a.active {
+    color: var(--renk-ana);
+    border-bottom: 2px solid var(--renk-ana);
+}
+
+/* ============ 3. Giriş bölümü ============ */
+.hero {
+    background-color: var(--renk-koyu);
+    /* Arka plan görseli gerektiğinde bu alanda değiştirilebilir. */
+    background-image: linear-gradient(rgba(34, 34, 34, 0.8), rgba(34, 34, 34, 0.9)), url('../img/hero-bg.jpg');
+    color: #fff;
+    padding: 5rem 1rem;
+    text-align: center;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #ccc;
+}
+
+/* ============ 4. Düğmeler ============ */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all var(--gecis);
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--renk-ana);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #9a5d24;
+}
+
+.btn-outline {
+    border: 2px solid var(--renk-ana);
+    color: var(--renk-ana);
+}
+
+.btn-outline:hover {
+    background-color: var(--renk-ana);
+    color: #fff;
+}
+
+/* ============ 5. Bölümler ve başlıklar ============ */
+.section {
+    padding: 4rem 0;
+}
+
+.section-alt {
+    background-color: #fff;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--renk-koyu);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--renk-ana);
+    margin: 0.5rem auto 0;
+}
+
+/* ============ 6. Hizmet kartları ============ */
+.grid-services {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Küçük ekranlarda tek sütun */
+    gap: 2rem;
+}
+
+.card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform var(--gecis);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h3 {
+    margin-bottom: 0.5rem;
+    color: var(--renk-koyu);
+}
+
+.card-content p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+/* ============ 7. Hakkımızda bölümü ============ */
+.about-flex {
+    display: flex;
+    flex-direction: column;
+    /* Küçük ekranlarda alt alta */
+    gap: 2rem;
+    align-items: center;
+}
+
+.about-text h2 {
+    color: var(--renk-koyu);
+    margin-bottom: 1rem;
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+}
+
+.features-list {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.features-list li {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--renk-ana);
+}
+
+.about-img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* ============ 8. Sayfa alt bilgisi ============ */
+.site-footer {
+    background-color: var(--renk-koyu);
+    color: #aaa;
+    padding-top: 3rem;
+}
+
+.footer-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-info h3 {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.footer-contact a {
+    color: var(--renk-ana);
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.footer-bottom {
+    background-color: #111;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+/* ============ 9. İlk ekran genişliği eşiği (tablet - 768 piksel) ============ */
+@media (min-width: 768px) {
+    .grid-services {
+        grid-template-columns: repeat(2, 1fr);
+        /* İki sütun */
+    }
+
+    .about-flex {
+        flex-direction: row;
+        /* Yan yana */
+        justify-content: space-between;
+    }
+
+    .about-flex>* {
+        flex: 1;
+    }
+
+    .footer-inner {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* ============ 10. İkinci ekran genişliği eşiği (masaüstü - 1024 piksel) ============ */
+@media (min-width: 1024px) {
+    .grid-services {
+        grid-template-columns: repeat(3, 1fr);
+        /* Üç sütun */
+    }
+
+    .hero {
+        padding: 8rem 1rem;
+    }
+
+    .section {
+        padding: 6rem 0;
+    }
+}
+
+/* ============ 11. İç sayfa başlığı ============ */
+.page-header {
+    background-color: var(--renk-koyu);
+    color: #fff;
+    padding: 3rem 1rem;
+    text-align: center;
+    border-bottom: 4px solid var(--renk-ana);
+}
+
+.page-header h1 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    color: #ccc;
+    font-size: 1.1rem;
+}
+
+/* ============ 12. İletişim formu ============ */
+.contact-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-info {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contact-info h2,
+.contact-info h3 {
+    color: var(--renk-koyu);
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+}
+
+.contact-info h2 {
+    margin-top: 0;
+}
+
+.contact-info address {
+    font-style: normal;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.contact-info address p {
+    margin-bottom: 1rem;
+}
+
+.contact-info a {
+    color: var(--renk-ana);
+}
+
+.contact-form-container {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form-container h2 {
+    color: var(--renk-koyu);
+    margin-bottom: 1.5rem;
+}
+
+.contact-form fieldset {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-form legend {
+    padding: 0 0.5rem;
+    font-weight: 700;
+    color: var(--renk-ana);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color var(--gecis);
+}
+
+/* Mesaj alanının boyutlandırma ayarları */
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Alan seçildiğinde kenarlık rengini değiştir */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--renk-ana);
+    box-shadow: 0 0 0 3px rgba(184, 115, 51, 0.2);
+}
+
+/* HTML5 doğrulama durumunu görsel olarak belirt */
+.form-group input:valid:not(:placeholder-shown) {
+    border-color: #28a745;
+}
+
+.form-group input:invalid:not(:placeholder-shown) {
+    border-color: #dc3545;
+}
+
+.form-group textarea:valid:not(:placeholder-shown) {
+    border-color: #28a745;
+}
+
+.form-group textarea:invalid:not(:placeholder-shown) {
+    border-color: #dc3545;
+}
+
+.required {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.btn-block {
+    width: 100%;
+    text-align: center;
+    border: none;
+    font-size: 1.1rem;
+}
+
+.form-not {
+    font-size: 0.85rem;
+    color: #777;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* ============ 13. İletişim sayfası için ek ekran genişliği ayarları ============ */
+@media (min-width: 768px) {
+    .contact-layout {
+        flex-direction: row;
+        /* İletişim bilgilerini formun yanına yerleştir */
+        align-items: flex-start;
+    }
+
+    .contact-info {
+        flex: 1;
+    }
+
+    .contact-form-container {
+        flex: 2;
+    }
+
+    /* Formu daha geniş tut */
+}
+
+/* Dar ekranlarda üst menü düzeni */
+@media (max-width: 576px) {
+    .header-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-list {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.8rem;
+    }
+}
+
+/* Logo düzeni */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /* Logoyu daire biçiminde göster */
+    object-fit: cover;
+}
